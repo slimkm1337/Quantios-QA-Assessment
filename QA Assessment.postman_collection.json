@@ -1,0 +1,214 @@
+{
+  "info": {
+    "_postman_id": "0fe5aecd-a62c-4878-9713-6467b66ba2c4",
+    "name": "QA Assessment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6111725"
+  },
+  "item": [
+    {
+      "name": "GET 404",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", function () {\r\n    pm.response.to.have.status(404);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://qainterview.netlify.app/.netlify/functions/watchlist_get?username=slimkm",
+          "protocol": "https",
+          "host": [
+            "qainterview",
+            "netlify",
+            "app"
+          ],
+          "path": [
+            ".netlify",
+            "functions",
+            "watchlist_get"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "slimkm"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET 200",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://qainterview.netlify.app/.netlify/functions/watchlist_get?username=Steven",
+          "protocol": "https",
+          "host": [
+            "qainterview",
+            "netlify",
+            "app"
+          ],
+          "path": [
+            ".netlify",
+            "functions",
+            "watchlist_get"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "Steven"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST 201",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 201\", function () {\r\n    pm.response.to.have.status(201);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"Steven\",\r\n  \"symbol\": \"SBUX\",\r\n  \"name\": \"Starbucks Corporation\",\r\n  \"price\": 114.23,\r\n  \"change\": 0.2,\r\n  \"change_percent\": 0.2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://qainterview.netlify.app/.netlify/functions/watchlist_post",
+          "protocol": "https",
+          "host": [
+            "qainterview",
+            "netlify",
+            "app"
+          ],
+          "path": [
+            ".netlify",
+            "functions",
+            "watchlist_post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST 400",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"Steven\",\r\n  \"symb0l\": \"SBUX\",\r\n  \"name\": \"Starbucks Corporation\",\r\n  \"price\": 114.23,\r\n  \"change\": 0.2,\r\n  \"change_percent\": 0.2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://qainterview.netlify.app/.netlify/functions/watchlist_post",
+          "protocol": "https",
+          "host": [
+            "qainterview",
+            "netlify",
+            "app"
+          ],
+          "path": [
+            ".netlify",
+            "functions",
+            "watchlist_post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST 404",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", function () {\r\n    pm.response.to.have.status(404);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"slimkm\",\r\n  \"symbol\": \"SBUX\",\r\n  \"name\": \"Starbucks Corporation\",\r\n  \"price\": 114.23,\r\n  \"change\": 0.2,\r\n  \"change_percent\": 0.2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://qainterview.netlify.app/.netlify/functions/watchlist_post",
+          "protocol": "https",
+          "host": [
+            "qainterview",
+            "netlify",
+            "app"
+          ],
+          "path": [
+            ".netlify",
+            "functions",
+            "watchlist_post"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
