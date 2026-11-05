@@ -53,10 +53,3 @@ Base URL: `https://qainterview.netlify.app/.netlify/functions`
 1. Open Postman and click **Import**, then select `QA Assessment.postman_collection.json`.
 2. Right-click the **QA Assessment** folder and choose **Run folder**.
 3. Each request has post-response tests (status code, response time, body checks), and the results show as pass or fail in the Runner.
-
-## Notes and observations
-
-- The API returns JSON with `Content-Type: text/plain`, so the tests parse the body with `pm.response.json()` and do not assert on a JSON content type.
-- Numeric fields (`price`, `change`, `change_percent`) are returned as strings in the GET response, although the Swagger example shows numbers.
-- Running POST 201 more than once adds the same stock to the watchlist again.
-- The site responds slowly at times (up to several seconds), so response-time limits and the Playwright URL assertion use longer timeouts.
